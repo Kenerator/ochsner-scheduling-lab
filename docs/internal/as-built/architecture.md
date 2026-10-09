@@ -1,6 +1,6 @@
 # As-built architecture
 
-Updated: 2026-10-09. Reviewed product revision: `71f8e601e5666f15e4d3b3874e8d59537a089b35`; original product baseline; persona follow-on source is reviewed against committed adoption base c19680e plus the subsequent tested parser/support-summary delta. Controlled IAB repeated submission and responsive layout passed. Fresh Mac ARM/Linux installation and 90-test qualification are linked below.
+Updated: 2026-10-09. Reviewed product revision: `66adbf54eb22020eb505f611f9545451b9888dfa`; includes the tested persona parser/support-summary follow-on. Controlled IAB repeated submission and responsive layout passed. Fresh Mac ARM/Linux installation and 90-test qualification are linked below.
 
 ## Runtime boundaries
 

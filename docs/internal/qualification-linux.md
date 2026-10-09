@@ -40,3 +40,7 @@ See [setup](../../README.md), [demo runbook](demo.md), [live qualification](live
 ## Controlled IAB interaction — 2026-10-09 00:37CDT
 
 Parent forwarded only owned loopback28185 through established SSH. Clean-clone rehearsal UI visibly passed provider lookup, verified API options, separate selection then literal yes→scheduled booking, reset warning, no-match without candidate disclosure and actual mock queued handoff/nohumancontact statement. No Linux livekey/model call. Early browser helper targeted its captured original tab; explicit target binding resolved test-control error, no application change. UI/API remain owned for final review until explicitly stopped.
+
+## Exact persona candidate follow-on — 2026-10-09 01:36:13 CDT
+
+Existing isolated clone was clean before checkout and after qualification at `66adbf54eb22020eb505f611f9545451b9888dfa`. Python3.12.3; no credentials or dependency changes. All95 tests passed in30.829 seconds; success alias completed/booked (39.1ms), failure alias completed/queued mock handoff (32.8ms); Marimo check passed. No persistent server/UI launched. This follow-on reuses the installed clean-clone environment; the original fresh-install evidence above remains bound to its original revision.
