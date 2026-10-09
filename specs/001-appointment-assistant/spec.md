@@ -14,7 +14,7 @@
 
 As a person seeking care, I want to ask in ordinary text which providers serve my requested specialty and location, clarify missing information over multiple turns, and see factual choices before deciding whether to book.
 
-**Persona**: Unresolved primary-user placeholder in [Personas](../../docs/product/personas.md#persona-selection-deferred). Fixture names are synthetic patients, not selected or researched Personas.
+**Persona**: Jules and Ellie-Rae, exact hypothesis pins in [Personas](../../docs/product/personas.md). Fixture patients remain synthetic records, not Personas.
 
 **Origin / scope**: SPECIFIED journey, reconciled from assignment Required 1–3 and supplied `provider_lookup`; accepted required scope. Narrative wording is normalized from those sources.
 
@@ -32,7 +32,7 @@ As a person seeking care, I want to ask in ordinary text which providers serve m
 
 As a person booking care, I want the assistant to identify my synthetic patient record, show available appointments, and book my chosen appointment only after I explicitly confirm its details.
 
-**Persona**: Same unresolved primary-user placeholder as Story 1; supplied `happy_path_booking` uses a synthetic existing patient, not an authenticated real patient.
+**Persona**: Jules and Ellie-Rae; Sam-Rae (AGENT QA) probes stale consent/replay. Exact hypothesis pins in [Personas](../../docs/product/personas.md).
 
 **Origin / scope**: SPECIFIED journey, assignment Required 1 and 4, booking policies and `happy_path_booking`; accepted required scope.
 
@@ -53,7 +53,7 @@ As a person booking care, I want the assistant to identify my synthetic patient 
 
 As a person whose record cannot be uniquely identified, I want a clear explanation and safe clarification or human assistance instead of guessed identity or disclosure of someone else's appointments.
 
-**Persona**: Unresolved primary-user placeholder, including callers whose identifiers match no record or more than one record; no invented demographic or accessibility attributes.
+**Persona**: Ellie-Rae and Jules, including unresolved identity; exact hypothesis pins in [Personas](../../docs/product/personas.md). No demographic or diagnostic attributes inferred.
 
 **Origin / scope**: SPECIFIED journeys from `no_patient_match`, `multiple_patient_matches`, identity policies and assignment failure table; accepted identity-safety scope. No-match is the required demonstrated failure. Multiple-match safeguards apply to booking even though existing-appointment lookup is optional.
 
@@ -72,7 +72,7 @@ As a person whose record cannot be uniquely identified, I want a clear explanati
 
 As a person encountering unavailable scheduling or an unsupported request, I want a specific explanation and a finite next step, with no fabricated outcome or medical advice.
 
-**Persona**: Unresolved primary-user placeholder. A request for medical advice does not establish a clinical Persona or grant clinical authority.
+**Persona**: Jules and Morgan-Rae (human support), with Sam-Rae (AGENT QA) safety probes. These hypothesis mappings grant no clinical authority.
 
 **Origin / scope**: SPECIFIED policies, assignment safety description and supplied `slot_conflict`, `no_availability`, `api_failure`, `unsupported_request`; accepted baseline safe-stop behavior. Richer alternate-search recovery and recorded handoff delivery remain optional.
 
@@ -92,7 +92,7 @@ As a person encountering unavailable scheduling or an unsupported request, I wan
 
 As the mapped support/admin teammate, I want accurate, privacy-conscious outcome and recovery context so I can help without making the user repeat work or taking unsafe action.
 
-**Persona**: Unresolved [Support/Admin placeholder](../../docs/product/personas.md#supportadmin-persona-selection-pending); selection and validation pending. This role label grants no access rights.
+**Persona**: Morgan-Rae (human support hypothesis), exact pin in [Personas](../../docs/product/personas.md); mapping grants no console or access rights.
 
 **Origin / scope**: INFERRED story wording migrated from the draft seed; basis is supplied observability/privacy policies plus Constitution support coverage. Required diagnostic information is accepted because policies explicitly require it; no admin console, authentication system or live support delivery is added.
 
@@ -109,7 +109,7 @@ As the mapped support/admin teammate, I want accurate, privacy-conscious outcome
 
 As a developer or reviewer, I want complete local setup and a concise walkthrough so I can reproduce the required flows and understand the assistant's limitations.
 
-**Persona**: Unresolved reviewer/maintainer placeholder; Support/Admin mapping remains pending as in Story 5.
+**Persona**: Sam-Rae (AGENT QA hypothesis) for reproducible checks; Morgan-Rae for human support inspectability. Persona/tool text grants no action authority.
 
 **Origin / scope**: INFERRED narrative based on explicit assignment submission/definition-of-done requirements and Constitution demonstration/documentation requirements; those underlying requirements remain accepted. External submission is not authorized by this specification.
 

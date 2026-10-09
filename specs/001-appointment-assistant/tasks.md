@@ -201,3 +201,9 @@ Genuine OpenAI CLI provider, five-turn booking and no-match flows passed; an add
 All Analyze findings, including the twelve subsequent consistency findings at every severity, were corrected. One independent review found three workflow issues; failing regressions preceded repairs, and delta review reported no unresolved finding. [Review](../../docs/internal/reviews/adversarial-review.md). All eight vendor hashes match unchanged supplied originals; 111 document links resolve. Credential guard scanned the full staged index without findings or incomplete scans before private commits.
 
 Actual video capture remains pending coordinated Operator/native recording; no automatic recorder is exposed by current tools and no screenshot montage is substituted. Media work may continue after the three-hour mark. Named Persona validation, production controls and public delivery remain explicit follow-on work in [next steps](../../docs/product/next-steps.md). This is a verified synthetic product handoff, not production or assignment-video completion.
+
+## Focused persona follow-on — 2026-10-09
+
+- [x] T061 Retain exact Jules, Ellie-Rae, Morgan-Rae and Sam-Rae pins/cards/ancestors locally and map existing native stories; preserve historical bootstrap selections and hypotheses.
+- [ ] T062 [P] Review actual behavior against pinned constraints; distinguish verified existing behavior from concrete gaps and add meaningful regressions before any fixes.
+- [ ] T063 Verify affected keyboard/UI and inspectable outcome flows, update existing qualification/video notes, and apply guarded persona milestones/next RC only when their actual conditions hold.
