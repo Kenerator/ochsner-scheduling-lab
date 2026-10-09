@@ -35,3 +35,9 @@ Product RC-1 is `4a478ae6d14794bf6baef53415dc135652a4898a`, captured at 00:58:59
 | Conflict, identity ambiguity/correction, cancellation/changed proposal, API failure and unknown-write guards | Meaningful automated and isolated demo coverage; do not claim every edge case has live AI UI footage | Pending |
 
 There are no separate product tabs, mode/theme toggles, slot buttons or Reset button: choices, confirmation and reset use the message form. Framework evidence nodes repeat the same expand/copy control types. Native clipboard and PNG export gaps prevent a full-control CAPTURE-READY claim; they do not change the qualified scheduling source. Keep active mock state untouched; use an isolated fresh mock/UI for media smoke testing. Screenshot evidence is not video.
+
+## Pinned persona rehearsal update — 2026-10-09
+
+[Jules, Ellie-Rae, Morgan-Rae and AGENT QA Sam-Rae](../product/personas.md) are exact retained hypotheses, not real-user validation. Genuine isolated live UI qualification now includes invalid numbered choice preserving options/identity, short valid selection, keyboard Tab/Enter confirmation, support summary after completed booking, and missing-information summary after reset/partial request. These are tested behaviors, not recorded clips. Re-record affected footage using the next qualified RC; retain prior immutable RC/progress tags. Native evidence-copy/PNG framework-control checks and actual media capture remain pending.
+
+Additional live persona check passed: after completed booking and identity correction, support explicitly distinguishes current not-attempted booking from earlier completed attempt. Record this corrected outcome using the new persona-impact candidate, not the prior UI process.

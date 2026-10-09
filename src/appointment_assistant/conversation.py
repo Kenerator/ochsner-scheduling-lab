@@ -29,7 +29,7 @@ class Session:
         self.fields={};self.intent=None;self.patient=None;self.matches=[]
         self.slots=[];self.providers={};self.proposal=None;self.revision=0
         self.last_booking=None;self.unknown=False;self.unknown_handoff=False;self.identity_failures=0
-        self.state='start'
+        self.state='start';self.booking_outcome='not attempted';self.booking_revision=None
 
     def submit(self,text,generation=None):
         if generation is None:
@@ -49,14 +49,37 @@ class Session:
         self.events.emit('guard',action=operation,code=decision.code,allowed=decision.allowed)
         if not decision.allowed:raise PolicyDenied()
 
+    def _support_summary(self):
+        # Only fixed categorical facts cross this summary boundary: no raw text,
+        # identity values, IDs, dates or clinical content. Outcome survives a
+        # changed intent so support is not told an earlier booking never happened.
+        known=['identity verified' if self.patient else 'identity unverified']
+        if self.intent:known.append({'book':'booking requested','appointment_lookup':'appointment lookup','provider_lookup':'provider lookup'}.get(self.intent,'scheduling help'))
+        for key in ('specialty','location'):
+            if self.fields.get(key):known.append(self.fields[key].replace('_',' '))
+        missing=[]
+        if not self.patient:
+            for key,label in (('phone','phone'),('dob','date of birth')):
+                if not self.fields.get(key):missing.append(label)
+            if not missing:missing.append('unique identity match')
+        if self.intent=='book':
+            for key in ('specialty','location'):
+                if not self.fields.get(key):missing.append(key)
+        outcome='unknown' if self.unknown else self.booking_outcome
+        if not self.unknown and self.booking_revision is not None and self.booking_revision!=self.revision:
+            outcome='not attempted for current request; earlier attempt '+self.booking_outcome
+        return 'Known: '+', '.join(known)+'. Missing: '+(', '.join(missing) or 'none')+'. Booking: '+outcome+'.'
+
     def _handoff(self,reason,message):
+        summary=self._support_summary()
+        message=message+' '+summary
         self.proposal=None;self.slots=[]
         if self.unknown_handoff:
             return self._result(message+' A prior handoff outcome is unknown; contact scheduling staff directly. I will not repeat it.','handoff','unknown')
         self.events.emit('handoff',reason=reason,outcome='not_attempted')
         try:
             self._guard('handoff')
-            receipt=self.api.handoff(reason,'Scheduling assistance required: '+reason.replace('_',' ')+'.',
+            receipt=self.api.handoff(reason,summary,
                  patient_id=self.patient['patientId'] if self.patient else None)
             return self._result(message+' A request was queued in the synthetic mock; no human contact is confirmed.','handoff','unknown' if self.unknown else 'completed')
         except SchedulingError as e:
@@ -87,7 +110,7 @@ class Session:
                 if self.unknown or self.unknown_handoff:
                     return self._result('A previous effect outcome is unknown. Reset cannot establish failure; contact scheduling staff to reconcile it before another booking.','blocked','unknown')
                 self.fields={};self.patient=None;self.matches=[];self.slots=[];self.proposal=None
-                self.intent=None;self.last_booking=None;self.identity_failures=0;self.revision+=1
+                self.intent=None;self.last_booking=None;self.identity_failures=0;self.booking_outcome='not attempted';self.booking_revision=None;self.revision+=1
                 return self._result('Conversation reset. The reference mock bookings remain; restart only your own mock to reset synthetic fixtures.','start')
             meaningful=a.intent in ('provider_lookup','book','appointment_lookup')
             changed_intent=meaningful and a.intent!=self.intent
@@ -160,17 +183,18 @@ class Session:
                             return self._result('The proposal changed. Choose a current option and confirm again.','slots','rejected')
                         self._guard('book',current_slot=True,current_consent=True)
                         self.proposal=None # reserve attempt before dispatch; never reopen after unknown
+                        self.booking_revision=self.revision
                         try:
                             appointment=self.api.book(patient,slot)
                         except SchedulingError as e:
                             if e.unknown:
-                                self.unknown=True;self.slots=[]
+                                self.unknown=True;self.booking_outcome='unknown';self.slots=[]
                                 return self._handoff('other','The booking outcome is unknown. Do not repeat the booking; scheduling staff must reconcile it.')
-                            self.slots=[]
+                            self.booking_outcome='rejected';self.slots=[]
                             if e.status==409:
                                 return self._result('That slot is no longer available. Ask to search again, then choose and confirm a fresh option.','conflict','rejected')
                             return self._handoff('api_failure','The booking was rejected by the scheduling system; no booking is confirmed.')
-                        self.last_booking=appointment;self.slots=[]
+                        self.last_booking=appointment;self.booking_outcome='completed';self.slots=[]
                         return self._result(self._appointment_text(appointment),'booked','completed')
                     if a.option_ordinal is None:
                         return self._result(self.proposal['summary']+' Reply exactly yes or confirm to book, or provide a correction.','proposal')

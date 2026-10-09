@@ -33,3 +33,7 @@ class InterpretationTests(unittest.TestCase):
         interpreter=RehearsalInterpreter()
         for text,want in (("Find primary care providers downtown","provider_lookup"),("Book dermatology uptown","book"),("Show my appointments","appointment_lookup"),("Talk to a human","human_request"),("What medicine should I take?","medical_advice")):
             with self.subTest(text=text): self.assertEqual(interpreter.interpret(text,{}).intent,want)
+
+    def test_valid_out_of_range_choice_remains_a_proposal_for_local_validation(self):
+        interpreter=RehearsalInterpreter()
+        self.assertEqual(interpreter.interpret("9", {"intent":"book","slot_count":3}).option_ordinal,9)

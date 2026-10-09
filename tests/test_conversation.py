@@ -27,6 +27,37 @@ class ConversationTests(unittest.TestCase):
         return Session(api or self.api, Scripted(actions), events=self.events, policy=policy or PolicyGate())
     def initial(self):
         return action('book',phone='555-0101',dob='1985-04-12',specialty='primary_care',location='downtown')
+    def test_support_summary_separates_known_missing_and_outcome_without_identity(self):
+        s=self.session(action('book',specialty='primary_care'),action('human_request'))
+        s.submit('book primary care');out=s.submit('human please')
+        summary=self.store.handoffs[-1]['summary']
+        self.assertIn('Known:',summary);self.assertIn('primary care',summary)
+        self.assertIn('Missing:',summary);self.assertIn('phone',summary)
+        self.assertIn('location',summary);self.assertIn('Booking: not attempted',summary)
+        self.assertIn(summary,out.message)
+        self.assertNotRegex(summary,r'\d|pat_|@')
+        self.assertLessEqual(len(summary),300)
+
+    def test_support_distinguishes_earlier_booking_from_corrected_request(self):
+        s=self.session(self.initial(),action(ordinal=1),action(),
+                       action('book',phone='555-9999',dob='1990-01-01'),action('human_request'))
+        s.submit('book');s.submit('1');s.submit('yes')
+        s.submit('different patient');s.submit('human')
+        summary=self.store.handoffs[-1]['summary']
+        self.assertIn('Booking: not attempted for current request',summary)
+        self.assertIn('earlier attempt completed',summary)
+        self.assertNotIn('Booking: completed',summary)
+
+    def test_support_after_booking_reports_completed_without_exposing_identity(self):
+        s=self.session(self.initial(),action(ordinal=1),action(),action('human_request'))
+        s.submit('book');s.submit('1');s.submit('yes');out=s.submit('human')
+        summary=self.store.handoffs[-1]['summary']
+        self.assertIn('identity verified',summary);self.assertIn('Booking: completed',summary)
+        self.assertIn('Missing: none',summary);self.assertIn('no human contact',out.message)
+        self.assertNotRegex(summary,r'555|1985|pat_|appt_|slot_')
+        events=json.dumps(self.events.snapshot())
+        self.assertNotIn(summary,events)
+
     def test_mismatched_slot_provider_facts_cannot_be_displayed(self):
         class Mismatch(SchedulingAPI):
             def providers(self, **filters):
@@ -112,6 +143,7 @@ class ConversationTests(unittest.TestCase):
         s.submit('book');s.submit('1');out=s.submit('yes')
         self.assertEqual(out.outcome,'unknown');self.assertTrue(s.unknown)
         self.assertIn('unknown',out.message.lower());self.assertEqual(len(self.store.handoffs),1)
+        self.assertIn('Booking: unknown',self.store.handoffs[-1]['summary'])
         self.assertEqual(s.submit('yes').outcome,'unknown')
 
     def test_invalid_proposed_fields_never_reach_api(self):

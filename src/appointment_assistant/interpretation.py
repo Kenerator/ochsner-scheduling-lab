@@ -80,5 +80,5 @@ class RehearsalInterpreter:
             if re.search(r'\b'+word+r'\b',low): ordinal=number
         number=re.fullmatch(r'(?:option\s*)?(\d{1,2})',low)
         if number: ordinal=int(number.group(1))
-        if ordinal is not None and ordinal>context.get('slot_count',100): raise InterpretationError('Invalid option')
+        # Current-choice bounds belong to Session so invalid choices retain context.
         return validate_action(dict(intent=intent, fields=fields, option_ordinal=ordinal))

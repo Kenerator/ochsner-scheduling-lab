@@ -50,8 +50,8 @@ class LiveBoundaryTests(unittest.TestCase):
         self.assertNotIn("private",json.dumps(events.rows))
         self.assertEqual(events.rows[0]["reason"],"model_unavailable")
 
-    def test_ordinal_outside_display_and_oversized_text_fail_closed(self):
+    def test_valid_ordinal_outside_display_reaches_local_choice_validation(self):
         body=response({"intent":"book","fields":FIELDS,"option_ordinal":3})
         interpreter=OpenAIInterpreter(key="k",opener=lambda *a,**k:io.BytesIO(json.dumps(body).encode()))
-        with self.assertRaises(InterpretationError): interpreter.interpret("third",{"slot_count":2})
+        self.assertEqual(interpreter.interpret("third",{"slot_count":2}).option_ordinal,3)
         with self.assertRaises(InterpretationError): interpreter.interpret("x"*20000,{})

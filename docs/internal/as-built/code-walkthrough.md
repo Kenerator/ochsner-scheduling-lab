@@ -1,6 +1,6 @@
 # Code and test walkthrough
 
-Updated: 2026-10-09. Reviewed product revision: `71f8e601e5666f15e4d3b3874e8d59537a089b35`; subsequent handoff edits are documentation only. Controlled IAB repeated submission and responsive layout passed. Fresh Mac ARM/Linux installation and 90-test qualification are linked below.
+Updated: 2026-10-09. Reviewed product revision: `71f8e601e5666f15e4d3b3874e8d59537a089b35`; original product baseline; persona follow-on source is reviewed against committed adoption base c19680e plus the subsequent tested parser/support-summary delta. Controlled IAB repeated submission and responsive layout passed. Fresh Mac ARM/Linux installation and 90-test qualification are linked below.
 
 ## Follow a submitted turn
 
@@ -50,3 +50,5 @@ These entry points use the integrated scheduling adapter. Final combined accepta
 A useful bounded exercise is to refine a fixed no-match follow-up message in `Session._turn`, preserving its state/outcome and finite human next step. First adjust the no-match assertion in `test_conversation.py`, confirm it detects the wording change, then update the message and run affected tests plus the full suite/no-match demo. No new API operation, clinical rule, identity disclosure or consent grammar is needed. This is a proposed exercise, not an already executed review event.
 
 [Architecture](architecture.md) · [Native implementation tasks](../../../specs/001-appointment-assistant/tasks.md) · [Feature specification](../../../specs/001-appointment-assistant/spec.md)
+
+Persona follow-on: schema-valid out-of-range ordinals reach deterministic current-choice validation, preserving visible options and identity without effects. Session builds fixed categorical support summaries separating known facts, missing information and persistent booking outcome; no identity values, IDs, dates or raw clinical/request text cross that summary boundary. [Persona choice integration tests](../../../tests/test_persona_choices.py) and [conversation tests](../../../tests/test_conversation.py) cover the repaired behavior; [live evidence](../live-qualification.md) records actual keyboard/UI checks.

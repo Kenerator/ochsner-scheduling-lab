@@ -74,7 +74,7 @@ class OpenAIInterpreter:
                         outputs.append(content.get('text'))
             if len(outputs)!=1 or not isinstance(outputs[0],str): raise ValueError()
             action=validate_action(json.loads(outputs[0],object_pairs_hook=_unique_object))
-            if action.option_ordinal is not None and action.option_ordinal>safe_context['slot_count']: raise ValueError()
+            # Session checks current choices; schema-valid ordinals are not consent.
             if self.events is not None:
                 self.events.emit('interpretation',intent=action.intent,outcome='completed',elapsed_ms=round((monotonic()-started)*1000,3))
             return action
