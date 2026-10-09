@@ -4,7 +4,7 @@
 
 **Created**: 2026-10-08
 
-**Status**: Implement in progress. Specify, Plan, Tasks and Analyze stage records below are historical provenance; implementation qualification, user validation and delivery remain pending until evidenced.
+**Status**: Product implementation and synthetic qualification complete. Historical stage records remain below; [tasks and verification evidence](tasks.md) describe current outcomes. Actual video capture, named Persona validation and external delivery remain pending.
 
 **Input**: Include client requirements indexed by `docs/product/RFP/README.md`; reconcile supplied intake with `docs/product/user-stories.md` and Persona mappings.
 
@@ -189,7 +189,7 @@ The original Specify-stage optional labels below describe intake scope at that t
 - The [RFP index](../../docs/product/RFP/README.md) and [manifest](../../docs/product/RFP/manifest.json) identify the supplied assignment, policies, scheduling contract, mock-service documentation/reference code, suggested scenarios and fixtures. All eleven text entries were read, with assignment first and its policy/contract/mock references in the requested order. Reference code was inspected, not executed during Specify.
 - The only indexed attachment is `.DS_Store`, identified as Apple Desktop Services Store metadata. It was not interpreted as a requirements document; no requirements-bearing document attachment is present in this manifest. Do not claim its contents were reviewed.
 - Assignment Required 1–5 define the minimum flow. Policies impose safety and observability requirements across supported paths; their requirements are not downgraded by the optional enhancements list. `no_patient_match` is the highest-priority required failure demonstration. `multiple_patient_matches` is labeled required in supplied scenarios and is covered as an identity safeguard; its example uses optional existing-appointment lookup, which remains optional rather than silently expanding the minimum flow.
-- The generic [brief](../../docs/product/brief.md) remains starter background; its pure synthetic-adapter/one-operation demonstration does not satisfy this client's multi-turn, supplied-service requirement. The current [Lab decisions](../../docs/product/decisions.md) have replaced the historical starter execution decisions and align with the selected plan. The Constitution and bootstrap controls remain unchanged. The separate bootstrap synthetic text-normalization qualification example is infrastructure reference, not this client feature.
+- The adopted [brief](../../docs/product/brief.md) now reflects this client's multi-turn, supplied-service requirement; the generic one-operation starter brief was superseded. The current [Lab decisions](../../docs/product/decisions.md) have replaced the historical starter execution decisions and align with the selected plan. The Constitution and bootstrap controls remain unchanged. The separate bootstrap synthetic text-normalization qualification example is infrastructure reference, not this client feature.
 - No named Persona is pinned in supplied mappings. Explicit unresolved primary-user, Support/Admin and reviewer placeholders are retained; selecting and validating constraint-rich Personas is a next step, not invented research or a gate preventing the required flow. Draft Support/Admin narrative has been migrated here with inferred origin distinct from the explicit policy requirements it supports.
 
 ### Optional capabilities and boundaries

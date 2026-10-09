@@ -1,12 +1,11 @@
 # Product brief
 
-<!-- Adoption: replace the following generic statements with your input-derived brief. -->
+Updated: 2026-10-09.
 
-- Purpose/pain: make a consequential workflow understandable and easy to demonstrate without exposing real data or services.
-- People/agents: select personas in [personas](personas.md), including user and support/admin needs. Names do not imply verified identity.
-- Journeys: reconcile supplied and inferred [User Stories](user-stories.md) with Persona pins; native feature stories own accepted detail.
-- Success: show the actual proposal, confirm it, perform one synthetic operation and explain the result.
-- Failure/recovery: cancellation performs no operation; unavailable service gives a finite handoff.
-- Assumptions: Python core/CLI is a reference starter, not a required final UI; synthetic fixtures are deliberate.
-- Evidence: meaningful behavior tests and repeatable demos; user research and real integration remain explicit next steps.
-- Limits: no live API, user authentication, durable execution, deployment or compliance certification.
+Build a synthetic Ochsner appointment assistant that helps users find providers, verify a mock patient, inspect appointments and available slots, and book only after a separate explicit confirmation of the current summary. A truthful queued mock handoff supports no-match, unsupported and medical requests without giving clinical advice.
+
+The reusable Python core powers a CLI and Marimo Lab UI. Genuine OpenAI interpretation extracts bounded intent and fields; deterministic code and a ZEN policy gate retain authority over identity, API facts, consent and effects. Rehearsal mode remains available without credentials. The supplied scheduling service is an unchanged local mock; all fixtures are synthetic.
+
+The accepted stories and success criteria live in the [feature specification](../../specs/001-appointment-assistant/spec.md). [Tasks and qualification](../../specs/001-appointment-assistant/tasks.md) record implemented outcomes, including fresh Mac ARM and Linux checks. [Personas](personas.md) remain unresolved placeholders rather than claimed user validation.
+
+Unknown write outcomes stop automatic retries and require reconciliation. The product has no production authentication, durable transaction guarantee or clinical/compliance certification. Actual walkthrough video, named Persona validation and external delivery remain in [next steps](next-steps.md).

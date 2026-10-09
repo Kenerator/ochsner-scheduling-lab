@@ -1,6 +1,6 @@
 # Code and test walkthrough
 
-Updated: 2026-10-09. Reviewed source baseline: `7e9f930b38cc58ea1e918be53baf01ba142b648d` plus working changes pending integration. Inspected integrated working-tree files, including SchedulingAPI. Final reviewer revision/results must be stamped by the integrating owner. Browser repeated-submit qualification passed in controlled IAB; responsive CSS delta verified at694px. Fresh MacARM/Linux clones passed90tests at the reviewed baseline.
+Updated: 2026-10-09. Reviewed product revision: `71f8e601e5666f15e4d3b3874e8d59537a089b35`; subsequent handoff edits are documentation only. Controlled IAB repeated submission and responsive layout passed. Fresh Mac ARM/Linux installation and 90-test qualification are linked below.
 
 ## Follow a submitted turn
 

@@ -4,7 +4,7 @@
 
 **Actual Git branch**: `main`; setup returns the feature identifier in its `BRANCH` field. No feature branch created; Git extension is not configured.
 
-**Status**: Implement in progress. Phase 0/1 design, Tasks and Analyze are complete stage records; implementation qualification and delivery remain pending until evidenced.
+**Status**: Product implementation and synthetic qualification complete. Historical stage records remain below; [tasks and verification evidence](tasks.md) describe current outcomes. Actual video capture, named Persona validation and external delivery remain pending.
 
 ## Summary
 
@@ -18,7 +18,7 @@ Build a genuine multi-turn OpenAI text assistant with deterministic scheduling a
 
 **Storage**: Session-scoped in-memory conversation, proposal, submission-generation reservations and sanitized event buffer. Supplied reference server owns in-memory synthetic appointments/handoffs. No durable or distributed idempotency.
 
-**Testing**: Meaningful tests first: deterministic doubles, malformed extraction/HTTP boundaries, actual unchanged local mock integration and persona-placeholder acceptance cases. Required final command: `PYTHONPATH=src python3 -m unittest discover -s tests -v`; required provider/booking/no-match and failure demos; clean-clone Mac ARM and Linux setup/UI qualification. Tests/demos remain pending, not Plan evidence.
+**Testing**: Meaningful tests first: deterministic doubles, malformed extraction/HTTP boundaries, actual unchanged local mock integration and persona-placeholder acceptance cases. Required final command: `PYTHONPATH=src python3 -m unittest discover -s tests -v`; required provider/booking/no-match and failure demos; clean-clone Mac ARM and Linux setup/UI qualification. These were planned checks; current results are linked from [tasks.md](tasks.md).
 
 **Target Platform**: Local Mac ARM and Linux, Python 3.11+, Marimo browser UI `127.0.0.1:28183`, scheduling mock `127.0.0.1:4013`. Network/model account needed only for explicitly selected live interpretation; labeled rehearsal remains credential-free.
 
@@ -66,7 +66,7 @@ specs/001-appointment-assistant/
 └── tasks.md                      # Generated after Plan; current implementation authority
 ```
 
-### Planned source layout (implementation in progress; not completion evidence)
+### Historical planned source layout (see current as-built documentation)
 
 ```text
 src/appointment_assistant/
@@ -110,7 +110,7 @@ See [data model](data-model.md), [scheduling contract](contracts/scheduling.md),
 
 ## Historical Plan-to-Tasks handoff
 
-The following was the Plan-stage handoff used to generate [tasks.md](tasks.md); Implement is now in progress. Generate native tests-first tasks with requirement/story links and these dependencies:
+The following was the Plan-stage handoff used to generate [tasks.md](tasks.md); the product implementation is now qualified. The historical instruction was to generate native tests-first tasks with requirement/story links and these dependencies:
 
 - Foundation: selectively vendor unchanged reference artifacts with sibling layout/provenance; add declared UI dependency/configuration, licensing and model schema. Preserve synthetic fixtures and hooks/configuration.
 - Disjoint test owners may work in parallel once contracts are stable: scheduling tests then adapter; extraction tests then interpreter; event/submission tests then standalone patterns. Each pair retains tests-first order and exclusive files; main integrates contracts/native state.
@@ -126,7 +126,7 @@ No constitutional violations requiring justification. Reserve-before-effects sub
 
 ## Stage Handoff
 
-Native setup continued the contracted directory; pre/post hook checks found no `.specify/extensions.yml`. Phase 0 research and Phase 1 design are complete. At the historical Plan handoff, Tasks was next and Plan ended at Phase 1. Tasks and Analyze have since completed; Implement is in progress, preserving supplied selections and tests-first dependencies. Clean-clone qualification and video remain pending until evidenced.
+Native setup continued the contracted directory; pre/post hook checks found no `.specify/extensions.yml`. Phase 0 research and Phase 1 design are complete. At the historical Plan handoff, Tasks was next and Plan ended at Phase 1. Tasks, all-severity Analyze remediation and product implementation have since completed. Clean-clone Mac ARM and Linux qualification is recorded in [tasks.md](tasks.md); actual video capture remains pending.
 
 ## Lab action policy refinement — 2026-10-08
 

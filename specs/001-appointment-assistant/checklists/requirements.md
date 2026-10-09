@@ -1,7 +1,7 @@
 # Specification Quality Checklist: AI Appointment Scheduling Assistant
 
 **Purpose**: Record historical Specify quality review and the current approved refinement; implementation verification remains separate.
-**Current stage**: Implement in progress; no checklist item asserts completed implementation or qualification.
+**Current stage**: Product implementation qualified; this checklist records specification quality. See [tasks and verification](../tasks.md) for implementation evidence.
 **Created**: 2026-10-08
 **Feature**: [spec.md](../spec.md)
 
@@ -39,8 +39,8 @@
 - Iteration 2: Story 6.2, FR-014 and SC-008 now require an actual video of at most five minutes and distinguish script preparation, recording and separately authorized submission. Re-reviewed the checklist after this correction.
 - Content review: requirements describe user outcomes and scheduling-service behavior; technical contract/reference code remain linked intake, without inferred language, model-provider or interface prescriptions. The later approved FR-018 explicitly prescribes ZEN 2.1.2; this is a recorded requirement exception to technology-neutral wording, not an inferred design choice.
 - Scope review: all eleven indexed text sources were read. The only attachment is identified Finder metadata, not interpreted as requirements. No client requirements-bearing attachment is known to be unreviewed.
-- Readiness means the specification defines verifiable outcomes, not that the implemented feature already achieves them. Persona validation, timing evidence, actual flow verification and video remain pending.
+- Readiness means the specification defines verifiable outcomes, not that the implemented feature already achieves them. Named Persona validation and actual video remain pending; measured synthetic flow qualification is recorded in tasks.md.
 - The assignment optional list does not downgrade mandatory policy diagnostics/safety. Duplicate-match scenario safety is preserved without making optional existing-appointment lookup mandatory.
-- Source-backed assumptions resolve starter-template differences; planning must reconcile generic brief/decisions. No Constitution, bootstrap-control or managed-source change was made.
+- Source-backed assumptions resolve starter-template differences; the adopted brief and decisions now reflect the selected scope. No Constitution, bootstrap-control or managed-source change was made.
 - No `.specify/extensions.yml` exists: pre- and post-Specify hooks are absent, so no hook dispatch is required.
 - Items marked incomplete require spec updates before `$speckit-clarify` or `$speckit-plan`. Historical Specify review passed before Clarify/Plan. Plan, Tasks and Analyze have since completed; Implement is current. FR-018 acceptance requires real policy decisions and zero effects on denial/failure, with verification tracked in tasks rather than this checklist.

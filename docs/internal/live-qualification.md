@@ -15,3 +15,5 @@ Interpretation calls ranged713.7–2001.8ms in this run. These are completion du
 ## Controlled IAB live flow — 2026-10-09 00:27–00:34CDT
 
 Revision7e9f930, MacARM main Lab28183/API4013. Genuine5turnbooking asked phone thenDOB, displayed actual3options, selection showed exactsummary withoutwrite; current separateyes produced matching201scheduledappointment. PrivateAPIcount was1beforeconfirmation,2after. Reset/no-match returned no candidates, human request actuallyqueued201 with nohumancontact claim. Genuine2turnprovider flow asked missinglocation then displayedAPIproviders foruptown. Form edits and evidence inspection didnotdispatch; successive sends worked after explicit debounce=False andstableformcell. UIfeedback: draftcleared by next toolAXcapture (~1–2s toolroundtrip); no400msclaim or browser-paint SLA. Completion timing is instrumented whitelistlatency, separately from UIfeedback. LinuxUI qualifiedseparately inrehearsal only.
+
+Additional genuine CLI two-turn provider clarification passed: missing location prompted a focused question, then downtown returned API providers; 2516.5ms total process completion, no identity data or raw transcript exported.
