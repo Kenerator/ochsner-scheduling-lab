@@ -43,3 +43,13 @@ There are no separate product tabs, mode/theme toggles, slot buttons or Reset bu
 Additional live persona check passed: after completed booking and identity correction, support explicitly distinguishes current not-attempted booking from earlier completed attempt. Record this corrected outcome using the new persona-impact candidate, not the prior UI process.
 
 Three-hour progress snapshot: `poc/checkpoint-3h-20261009` → `3814611acaafbc9c499c7a0630ccc1a11670d380`, tag object `6cfa53d47c1d9f2027ea215ce915e0b37de05542`. Target2026-10-09T01:41:01-05:00; actual2026-10-09T01:41:31-05:00,30.294seconds late. All writers idle; clean tree before/after; private remote main and peeled tag verified exact. Documentation-only after qualified RC-2; progress snapshot does not claim footage or assignment-video completion. Approved pending media handoff resumed immediately.
+
+## Operator video hold and final product end-scroll
+
+Updated2026-10-09: VIDEO ON HOLD until the Operator says otherwise. No capture reservation is held by Lab; do not start a new recording or schedule a slot. Native clipboard/PNG export preflight is deferred with media work and remains unverified, not a required scheduling-product blocker. No footage, finished edit or submission is claimed.
+
+Prepared end-scroll text, bound to immutable `RC-2` / `66adbf54eb22020eb505f611f9545451b9888dfa`:
+
+> Synthetic Scheduling Lab: provider and appointment lookup, verified patient matching, numbered available slots, separate current confirmation before booking, and truthful queued mock handoff. OpenAI extracts bounded proposals; the Python core, ZEN policy gate and unchanged local API retain action authority. CLI and Marimo UI share that core. Four pinned persona hypotheses informed tested invalid-choice recovery, keyboard confirmation and support summaries that separate known/missing/current/earlier outcomes. Exact candidate:95 tests pass on Mac ARM and Linux; affected genuine live IAB flows verified. Session-only replay guards; unknown effects require reconciliation. No clinical advice, real-user validation, production authentication/durable transactions or actual representative delivery. Next: validate hypotheses with intended users, production safety/routing work, and authorized recording when the hold lifts.
+
+Subsequent Git changes are documentation only; RC-1, RC-2 and milestone/checkpoint tags remain immutable. Native tasks own completed product work; recording remains a separate held deliverable.
