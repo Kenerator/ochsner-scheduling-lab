@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "timeout": 900,
+  "install": ["{python}", "-m", "pip", "install", "."],
+  "checks": [
+    {"name": "unit-tests", "argv": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-v"]},
+    {"name": "demo-success", "argv": ["{python}", "-m", "appointment_assistant", "--mode", "rehearsal", "--scenario", "success", "--json-summary"]},
+    {"name": "demo-failure", "argv": ["{python}", "-m", "appointment_assistant", "--mode", "rehearsal", "--scenario", "failure", "--json-summary"]}
+  ]
+}

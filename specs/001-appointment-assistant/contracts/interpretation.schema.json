@@ -1,0 +1,99 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent",
+    "fields",
+    "option_ordinal"
+  ],
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": [
+        "provider_lookup",
+        "book",
+        "appointment_lookup",
+        "human_request",
+        "medical_advice",
+        "unsupported",
+        "decline",
+        "reset",
+        "unclear"
+      ]
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dob": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "zip_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "specialty": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "primary_care",
+            "dermatology",
+            null
+          ]
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "downtown",
+            "uptown",
+            "lakeside",
+            null
+          ]
+        }
+      },
+      "required": [
+        "phone",
+        "dob",
+        "zip_code",
+        "start_date",
+        "end_date",
+        "specialty",
+        "location"
+      ]
+    },
+    "option_ordinal": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  }
+}

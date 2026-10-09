@@ -1,0 +1,225 @@
+{
+  "nodes": [
+    {
+      "id": "input",
+      "name": "Input",
+      "type": "inputNode"
+    },
+    {
+      "id": "table",
+      "name": "Supplied scheduling safety boundary",
+      "type": "decisionTableNode",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "id": "operation",
+            "name": "operation",
+            "field": "operation"
+          },
+          {
+            "id": "verified",
+            "name": "verified",
+            "field": "verified"
+          },
+          {
+            "id": "current_slot",
+            "name": "current_slot",
+            "field": "current_slot"
+          },
+          {
+            "id": "current_consent",
+            "name": "current_consent",
+            "field": "current_consent"
+          },
+          {
+            "id": "unknown",
+            "name": "unknown",
+            "field": "unknown"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "allowed",
+            "name": "allowed",
+            "field": "allowed"
+          },
+          {
+            "id": "code",
+            "name": "code",
+            "field": "code"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "providers",
+            "operation": "\"providers\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "true",
+            "code": "\"allowed\""
+          },
+          {
+            "_id": "patient_search",
+            "operation": "\"patient_search\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "true",
+            "code": "\"allowed\""
+          },
+          {
+            "_id": "handoff",
+            "operation": "\"handoff\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "true",
+            "code": "\"allowed\""
+          },
+          {
+            "_id": "medical",
+            "operation": "\"medical_advice\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"medical_advice\""
+          },
+          {
+            "_id": "unsupported",
+            "operation": "\"unsupported\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"unsupported_request\""
+          },
+          {
+            "_id": "unknown-booking",
+            "operation": "\"book\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "true",
+            "allowed": "false",
+            "code": "\"unknown_outcome\""
+          },
+          {
+            "_id": "availability-identity",
+            "operation": "\"availability\"",
+            "verified": "false",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"identity_required\""
+          },
+          {
+            "_id": "appointments-identity",
+            "operation": "\"appointments\"",
+            "verified": "false",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"identity_required\""
+          },
+          {
+            "_id": "book-identity",
+            "operation": "\"book\"",
+            "verified": "false",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"identity_required\""
+          },
+          {
+            "_id": "slot",
+            "operation": "\"book\"",
+            "verified": "",
+            "current_slot": "false",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"slot_required\""
+          },
+          {
+            "_id": "consent",
+            "operation": "\"book\"",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "false",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"confirmation_required\""
+          },
+          {
+            "_id": "availability-verified",
+            "operation": "\"availability\"",
+            "verified": "true",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "true",
+            "code": "\"allowed\""
+          },
+          {
+            "_id": "appointments-verified",
+            "operation": "\"appointments\"",
+            "verified": "true",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "true",
+            "code": "\"allowed\""
+          },
+          {
+            "_id": "book-confirmed",
+            "operation": "\"book\"",
+            "verified": "true",
+            "current_slot": "true",
+            "current_consent": "true",
+            "unknown": "false",
+            "allowed": "true",
+            "code": "\"allowed\""
+          },
+          {
+            "_id": "fallback",
+            "operation": "",
+            "verified": "",
+            "current_slot": "",
+            "current_consent": "",
+            "unknown": "",
+            "allowed": "false",
+            "code": "\"invalid_action\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "output",
+      "name": "Output",
+      "type": "outputNode"
+    }
+  ],
+  "edges": [
+    {
+      "id": "in",
+      "sourceId": "input",
+      "targetId": "table"
+    },
+    {
+      "id": "out",
+      "sourceId": "table",
+      "targetId": "output"
+    }
+  ]
+}
