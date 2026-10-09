@@ -1,6 +1,6 @@
 # Code and test walkthrough
 
-Updated: 2026-10-09. Reviewed source baseline: `8048e19279d38296ef035e0b04b73feb0da3e2cc` plus working changes pending integration. Inspected integrated working-tree files, including SchedulingAPI. Final reviewer revision/results must be stamped by the integrating owner. Browser repeated-submit/remount qualification is pending; no completed browser qualification claim is made.
+Updated: 2026-10-09. Reviewed source baseline: `7e9f930b38cc58ea1e918be53baf01ba142b648d` plus working changes pending integration. Inspected integrated working-tree files, including SchedulingAPI. Final reviewer revision/results must be stamped by the integrating owner. Browser repeated-submit qualification passed in controlled IAB; responsive CSS delta verified at694px. Fresh MacARM/Linux clones passed90tests at the reviewed baseline.
 
 ## Follow a submitted turn
 
@@ -25,8 +25,8 @@ Updated: 2026-10-09. Reviewed source baseline: `8048e19279d38296ef035e0b04b73feb
 | [test_submission.py](../../../tests/test_submission.py) | Concurrent duplicate reservation, completed/unknown caching, failed receipt and capacity fail closed |
 | [test_conversation.py](../../../tests/test_conversation.py) | Provider lookup without identity, multi-turn identification, current consent, corrections, ZIP, no-match, appointments, medical/outage/conflict and policy denial |
 | [test_scheduling.py](../../../tests/test_scheduling.py) | Supplied-server roundtrip, input/query boundaries, 409/503, malformed data, unknown POST and no retries, date filter translation and diagnostic sink failure isolation (nine tests) |
-| [test_cli.py](../../../tests/test_cli.py) | CLI modes and demonstration behavior; combined verification pending |
-| [test_lab_ui.py](../../../tests/test_lab_ui.py) | Explicit form and internal cached receipt boundary, identical text as distinct submissions, render-only reads and sanitized failures; browser repeated-submit/remount qualification pending |
+| [test_cli.py](../../../tests/test_cli.py) | CLI modes and demonstration behavior; combined verification passed in fresh MacARM/Linux clones |
+| [test_lab_ui.py](../../../tests/test_lab_ui.py) | Explicit form and internal cached receipt boundary, identical text as distinct submissions, render-only reads and sanitized failures; browser repeated-submit/remount qualification passed |
 
 The 15 policy/evidence/submission tests passed against the local Python 3.11 virtual environment. Scheduling has nine focused tests; current CLI/demo and UI form boundary tests are present. All 24 conversation tests passed from the candidate root. This document does not assert a final passing combined suite. The integrating owner must record the authoritative final result. Unit doubles are not live AI evidence; supplied-service/live-model qualification belongs in [live qualification](../live-qualification.md).
 

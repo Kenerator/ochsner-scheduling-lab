@@ -1,6 +1,6 @@
 # As-built architecture
 
-Updated: 2026-10-09. Reviewed source baseline: `8048e19279d38296ef035e0b04b73feb0da3e2cc` plus inspected working changes pending integration. This document describes integrated working-tree code. The integrating owner must stamp the final reviewed revision and combined qualification results. Browser repeated-submit qualification is still being debugged; its completion is not asserted here.
+Updated: 2026-10-09. Reviewed source baseline: `7e9f930b38cc58ea1e918be53baf01ba142b648d` plus inspected working changes pending integration. This document describes integrated working-tree code. The integrating owner must stamp the final reviewed revision and combined qualification results. Browser repeated-submit qualification passed in controlled IAB; responsive CSS delta verified at694px. Fresh MacARM/Linux clones passed90tests at the reviewed baseline.
 
 ## Runtime boundaries
 

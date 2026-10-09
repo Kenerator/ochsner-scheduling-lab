@@ -12,7 +12,7 @@ Eight `--demo` names: provider_lookup, happy_path_booking, no_patient_match, mul
 
 ## Tested evidence
 
-Core integrated regression suite and all8 rehearsal demo acceptance tests passed during integration. Latest full-suite verification and platform snapshots are pending final integration. Required rehearsal success/failure rerun at05:10UTC succeeded: confirmed booking after separate selection/consent; no-match ended with mock queued human request and no booking. Genuine [CLI live qualification](live-qualification.md) passed provider/book/no-match. Browser form verification is in progress after an upstream Marimo chat metadata defect was isolated and replaced with local explicit form submission.
+Core integrated regression suite and all8 rehearsal demo acceptance tests passed during integration. Fresh MacARM and Linux authenticated clones at7e9f930 each passed90tests, cleaneditableinstall/pipcheck,all8demos andMarimocheck/startup. [Mac report](qualification-mac-arm.md), [Linux report](qualification-linux.md). Required rehearsal success/failure rerun at05:10UTC succeeded: confirmed booking after separate selection/consent; no-match ended with mock queued human request and no booking. Genuine [CLI live qualification](live-qualification.md) passed provider/book/no-match. Controlled IAB live form verified5turnbooking,2turnproviderclarification,reset/no-match/actualqueuedhandoff; LinuxcleancloneIABrehearsalverifiedprovider/book/separateconsent/reset/no-match/handoff. Upstream Marimo chat metadata defect was isolated and replaced with stable explicit form submission and immediate draft updates. Final responsive CSS affectedcheck passed at694px;10UItests+marimocheckpassed.
 
 ## Five-minute walkthrough
 

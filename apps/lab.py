@@ -36,6 +36,11 @@ def _(asset_root, mo):
     .lab-note { border-left: 4px solid var(--brand-accent); padding: 10px 16px; background: white; }
     :focus-visible { outline: 3px solid #13477d !important; outline-offset: 3px; }
     button:focus-visible, textarea:focus-visible { box-shadow: 0 0 0 5px #e0a42e80; }
+    .lab-panels { width: 100%; min-width: 0; }
+    @media (max-width: 900px) {
+      .lab-panels > div { flex-direction: column !important; align-items: stretch !important; }
+      .lab-panels > div > div { width: 100%; min-width: 0; flex-basis: auto !important; }
+    }
     </style>""")
     return
 
@@ -110,13 +115,14 @@ def _(adapter, escape, get_submission_revision, mo):
     ], gap=1).style({"background":"white", "padding":"18px", "border-radius":"10px", "border-top":"4px solid #13477d", "min-width":"0", "width":"100%", "box-sizing":"border-box", "overflow":"hidden"})
     # Keep the outer stack unstyled so Marimo gives its flex wrapper min-width:0.
     _inspector = mo.vstack([_inspector_body])
-    mo.hstack([
+    _panels = mo.hstack([
         mo.vstack([
             mo.md("### Conversation"),
             mo.vstack(_bubbles, gap=1).style({"max-height":"500px", "overflow":"auto", "min-width":"0", "width":"100%", "overflow-wrap":"anywhere"}),
         ], gap=1),
         _inspector,
     ], widths=[3,2], align="start", gap=2)
+    mo.Html('<div class="lab-panels">' + _panels.text + '</div>')
     return
 
 

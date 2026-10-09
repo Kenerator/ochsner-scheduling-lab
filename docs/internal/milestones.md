@@ -32,3 +32,9 @@ Link relevant tags from as-built docs and video notes instead of duplicating thi
 Consider one near-final or explicitly deferred task to populate the [review report](reviews/adversarial-review.md). Reuse a sufficient existing independent review. Preserve the source commit reviewed; commit sanitized findings and useful synthetic regressions. A suggested immutable tag is `poc/review-01`; record its source here and push that named tag only under existing destination/privacy authority. No raw consultation transcript, new mandatory gate or extra publication grant.
 
 [^tagging]: [Git: tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging). Reviewed 2026-10-07. Use annotated tags for meaningful source checkpoints and explicitly push selected tags. Limit: A checkpoint is not release/publication authority or a budget-compliance claim.
+
+## Lab checkpoints — 2026-10-09
+
+Immutable annotated `poc/implementation-01` points to7e9f930: guarded core/CLI/Marimo, all Analyze corrections; browser/platform qualification was pending at tag creation and is recorded later in qualification docs. Ordinary branch/tag push to approved privateorigin succeeded. Optional post-MVP UI/UX polish is deferred; browser-discovered functional fixes remain required work. Timed Operator checkpoints use distinct `poc/checkpoint-2h-20261009` and `poc/checkpoint-3h-20261009`; actual capture timestamps/SHAs are reported when made, never inferred retroactively.
+
+Two-hour checkpoint capture initiated 2026-10-09T00:42:26-05:00; target2026-10-09T00:41:01-05:00. This is actual late capture, not exact-time proof. All other writers completed; root quiesced implementation for staged guard/commit/private branch+annotatedtag push, then resumes. ExactSHA/tag remoteverification reported by task.

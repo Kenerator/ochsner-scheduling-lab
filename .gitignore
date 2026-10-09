@@ -28,3 +28,6 @@ docs/internal/private/
 .specify/bootstrap.json
 docs/product/RFP/source/
 docs/product/RFP/manifest.json
+
+# Native local install coordination is runtime state.
+.specify/.step-install.lock

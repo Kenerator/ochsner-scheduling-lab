@@ -11,3 +11,7 @@ CLI live runs at2026-10-09 05:00–05:01UTC:
 | no_patient_match | identity→identity→identity→handoff, no booking, mock queued201 |5170.7ms across4turns |
 
 Interpretation calls ranged713.7–2001.8ms in this run. These are completion durations, not400ms feedback compliance. Browser feedback is separately checked; no SLA is asserted. Live browser qualification is in progress; [demo](demo.md) will record observed outcomes. Doubles in tests/test_live_conversation.py qualify deterministic boundaries only and are not this live proof. Missing/invalid model outputs never silently fall back to rehearsal.
+
+## Controlled IAB live flow — 2026-10-09 00:27–00:34CDT
+
+Revision7e9f930, MacARM main Lab28183/API4013. Genuine5turnbooking asked phone thenDOB, displayed actual3options, selection showed exactsummary withoutwrite; current separateyes produced matching201scheduledappointment. PrivateAPIcount was1beforeconfirmation,2after. Reset/no-match returned no candidates, human request actuallyqueued201 with nohumancontact claim. Genuine2turnprovider flow asked missinglocation then displayedAPIproviders foruptown. Form edits and evidence inspection didnotdispatch; successive sends worked after explicit debounce=False andstableformcell. UIfeedback: draftcleared by next toolAXcapture (~1–2s toolroundtrip); no400msclaim or browser-paint SLA. Completion timing is instrumented whitelistlatency, separately from UIfeedback. LinuxUI qualifiedseparately inrehearsal only.

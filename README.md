@@ -4,17 +4,17 @@ A local, synthetic appointment assistant for private review. OpenAI extracts req
 
 ## Setup
 
-Use Python **3.11+** (verify with `python3.11 --version`). From a fresh authenticated clone of the approved private repository:
+Supported reviewer platforms: **Mac ARM and Linux x86_64**, Python **3.11+** (verify with `python3.11 --version`). Private repository access must already be authorized/authenticated; standard SSH `git@github.com:Kenerator/ochsner-scheduling-lab.git` is also supported. The maintainer-specific `kenerator-github.com` alias is optional local configuration, not a reviewer prerequisite. From a fresh authenticated clone of the approved private repository:
 
 ```sh
-git clone git@kenerator-github.com:Kenerator/ochsner-scheduling-lab.git
+git clone https://github.com/Kenerator/ochsner-scheduling-lab.git
 cd ochsner-scheduling-lab
 python3.11 -m venv .venv
 .venv/bin/python -m pip install -e .
 .venv/bin/python -m pip check
 ```
 
-On Linux, a verified Python3.12 executable is also supported. Dependencies are pinned in `pyproject.toml`: Marimo0.25.1 and ZEN2.1.2. No nxusKit/OpenAI SDK is required. Live mode needs `OPENAI_API_KEY` securely supplied in the process environment; never paste it in chat, source or CLI arguments. Missing credentials fail visibly. `--mode rehearsal` explicitly selects deterministic simulation.
+On Linux, a verified Python3.12 executable is also supported. Dependencies are pinned in `pyproject.toml`: Marimo0.25.1 and ZEN2.1.2. No nxusKit/OpenAI SDK is required. Live mode defaults to `gpt-5.4-mini`; optional `OPENAI_MODEL` selects an authorized compatible model, `API_BASE` selects the local scheduling API, and `SCHEDULING_MODE` is `openai` or `rehearsal`. CLI exposes `--model` and `--api-base` too. Live mode needs `OPENAI_API_KEY` securely supplied in the process environment; never paste it in chat, source or CLI arguments. Missing credentials fail visibly. `--mode rehearsal` explicitly selects deterministic simulation.
 
 ## Run
 
