@@ -15,3 +15,23 @@ Two-hour product checkpoint capture initiated 2026-10-09T00:42:26-05:00 (target0
 ## Exact product checkpoint
 
 `71f8e601e5666f15e4d3b3874e8d59537a089b35`, annotated `poc/checkpoint-2h-20261009`, actual tag capture 2026-10-09T00:43:34-05:00 (153 seconds late). Clean tree at capture; private remote main and peeled annotated tag verified equal. Later footage must identify its exact source commit, preserving this immutable checkpoint. Actual footage/capture paths remain pending.
+
+## Control and scenario capture checklist — 2026-10-09 01:03 CDT
+
+Product RC-1 is `4a478ae6d14794bf6baef53415dc135652a4898a`, captured at 00:58:59 CDT; private remote main and peeled tag matched, with clean tree. Every captured control and required operation must be exercised before recording and shown at least once across raw clips. Media owns the final edit and must disclose omitted coverage. Clip paths and timestamps are pending actual capture.
+
+| Element or operation | Pre-record verification | Footage |
+| --- | --- | --- |
+| Message field: type/edit; Send; field clears; repeated distinct turns | Passed actual IAB live multi-turn flows; editing alone has no effect | Pending |
+| Conversation transcript and scroll; API slots and exact current summary | Passed actual IAB provider/booking flows | Pending |
+| Separate literal yes/confirm; selection alone does not book | Passed live five-turn booking with API count before/after confirmation | Pending |
+| Reset message and displayed limits | Passed actual IAB reset; mock state persists and unknown effects are not resolved | Pending |
+| Evidence projection and scrolling; root collapse/expand | Passed actual IAB; collapse and expand repeated at RC-1 | Pending |
+| Evidence Copy controls | Exercised root Copy at RC-1; browser clipboard read was empty, so success is unverified. Repeat with native clipboard during coordinated capture preflight | Pending |
+| Framework menu and Download as HTML | Passed actual IAB; generated `/Users/ken/Downloads/lab.html` contains only the synthetic session. This is an export, not footage | Pending |
+| Framework Download as PNG | Exercised at RC-1; no download within 15 seconds and no lab PNG in Downloads. Investigate before claiming complete control coverage | Pending |
+| Live/rehearsal badge, logo, disclosures, responsive panels | Observed in actual IAB; badge is configuration display, not a mode toggle | Pending |
+| Provider lookup; verified appointment lookup; confirmed booking; no-match and queued handoff | Required flows qualified in linked live/platform/demo reports; replay exact required operations in footage | Pending |
+| Conflict, identity ambiguity/correction, cancellation/changed proposal, API failure and unknown-write guards | Meaningful automated and isolated demo coverage; do not claim every edge case has live AI UI footage | Pending |
+
+There are no separate product tabs, mode/theme toggles, slot buttons or Reset button: choices, confirmation and reset use the message form. Framework evidence nodes repeat the same expand/copy control types. Native clipboard and PNG export gaps prevent a full-control CAPTURE-READY claim; they do not change the qualified scheduling source. Keep active mock state untouched; use an isolated fresh mock/UI for media smoke testing. Screenshot evidence is not video.
