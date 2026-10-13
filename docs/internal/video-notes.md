@@ -65,3 +65,7 @@ New video capture remains forbidden. Assembly/narration/render from existing via
 Absolute asset paths delivered directly to SM and Media. These are stills, not a new recording or full-sequence proof. No actual ambiguous-write screenshot exists; no real-user/production/actual-human-delivery claim. Product qualification and immutable RC/checkpoint tags remain unchanged. Native Copy/PNG export verification stays deferred; these originals use the actual IAB screenshot API.
 
 Format correction: actual IAB bytes are native JPEG1280×720, verified by JPEG magic/file metadata. Initial S01 files used incorrect `.png` extensions; those originals remain preserved. The selected S02 `.jpg` files are byte-identical copies with correct extensions and corrected JSON sidecars; no conversion, overwrite, new browser capture or video occurred. Media and SM received the correction directly. Use S02 for assembly.
+
+## Launcher update — 2026-10-12
+
+The normal launch path now uses the pinned shared model-first wrapper; browser28454/API4013 by default, explicit rehearsal/no-call diagnostics retained. Shared runtime manifest source `b7875452e3a999ca69ce170822c66e7f679b4442`; candidate consumer evidence is in native tasks. This launch-only integration performs no new recording, live model call or browser qualification. Existing stills/live qualification retain their historical source bindings; no new footage or performance claim is implied.

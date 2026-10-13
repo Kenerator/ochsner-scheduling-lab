@@ -56,3 +56,9 @@ State is memory-only. Fixture verification is not production authentication. Dat
 Persona follow-on: schema-valid out-of-range ordinals reach deterministic current-choice validation, preserving visible options and identity without effects. Session builds fixed categorical support summaries separating known facts, missing information and persistent booking outcome; no identity values, IDs, dates or raw clinical/request text cross that summary boundary. [Persona choice integration tests](../../../tests/test_persona_choices.py) and [conversation tests](../../../tests/test_conversation.py) cover the repaired behavior; [live evidence](../live-qualification.md) records actual keyboard/UI checks.
 
 Booking outcomes are bound to the attempt revision; a corrected request labels a prior outcome as an earlier attempt. Unknown effects still require reconciliation regardless of revision.
+
+## Model-first launch boundary — 2026-10-12
+
+The pinned `tools/poc-runtime/` package validates Lab config, resolves the dedicated notes field privately in model mode, creates a secret-free supplied API child and a key-bearing CLI/Marimo model host, verifies exact PID/IPv4-loopback readiness with lsof, and cleans owned children. Existing scheduling, consent, identity and ZEN modules are unchanged. No dashboard or build-agent authentication is involved.
+
+Reviewed baseline `1726469`; pinned runtime manifest source `b7875452e3a999ca69ce170822c66e7f679b4442`, reviewed Template delivery `6e89464582dd62a977aaec778c8d6f8a0adf25c7`. Launcher candidate verification is tracked in [native tasks](../../../specs/001-appointment-assistant/tasks.md). No new live-model qualification is claimed.

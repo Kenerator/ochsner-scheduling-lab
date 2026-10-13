@@ -52,3 +52,9 @@ A useful bounded exercise is to refine a fixed no-match follow-up message in `Se
 [Architecture](architecture.md) · [Native implementation tasks](../../../specs/001-appointment-assistant/tasks.md) · [Feature specification](../../../specs/001-appointment-assistant/spec.md)
 
 Persona follow-on: schema-valid out-of-range ordinals reach deterministic current-choice validation, preserving visible options and identity without effects. Session builds fixed categorical support summaries separating known facts, missing information and persistent booking outcome; no identity values, IDs, dates or raw clinical/request text cross that summary boundary. [Persona choice integration tests](../../../tests/test_persona_choices.py) and [conversation tests](../../../tests/test_conversation.py) cover the repaired behavior; [live evidence](../live-qualification.md) records actual keyboard/UI checks.
+
+## Launcher files and tests — 2026-10-12
+
+`poc-launch.json` selects the lab adapter/browser/default model/dedicated notes item. `launch.py` parses safe requests and no-call help/doctor; `credentials.py` bounds private helper capture and role environments; `adapters.py` constructs existing app/service argv; `processes.py` owns readiness/cleanup. `tests/test_runtime_launcher.py` checks installed hashes, actual CLI/UI interpreter construction with fake Responses transport, override/offline/error behavior, no-call diagnostics, foreign listener preservation and real offline CLI cleanup.
+
+Reviewed baseline `1726469`; pinned runtime manifest source `b7875452e3a999ca69ce170822c66e7f679b4442`, reviewed Template delivery `6e89464582dd62a977aaec778c8d6f8a0adf25c7`. Launcher candidate verification is tracked in [native tasks](../../../specs/001-appointment-assistant/tasks.md). No new live-model qualification is claimed.
