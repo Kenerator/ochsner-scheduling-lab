@@ -18,6 +18,23 @@ On Linux, a verified Python3.12 executable is also supported. Dependencies are p
 
 ## Run
 
+The normal Ochsner launcher defaults to the real OpenAI browser path and starts its own synthetic API. Configure `POC_SECRET_HELPER` to your trusted executable `bw-get-secret` helper (the existing `bw-get-secret.sh` is supported by absolute path). The helper must resolve the exact Secure Note **`[Env] (Ochsner PoC) OPENAI_API_KEY`**, **notes** field. The launcher never substitutes an inherited `OPENAI_API_KEY` or another item. Do not put a credential in this configuration or command.
+
+```sh
+.venv/bin/python tools/poc-runtime/launch.py --help
+.venv/bin/python tools/poc-runtime/launch.py --doctor
+.venv/bin/python tools/poc-runtime/launch.py
+# Explicit alternatives:
+.venv/bin/python tools/poc-runtime/launch.py --interface cli
+.venv/bin/python tools/poc-runtime/launch.py --offline
+```
+
+Open `http://127.0.0.1:28454` for the launcher browser UI (API `4013`). Use `--ui-port` / `--api-port` for free alternate ports; an occupied port fails without stopping its owner. `--model` overrides `OPENAI_MODEL`, then the retained `gpt-5.4-mini` default applies. Explicit `--offline` selects labeled rehearsal without vault/model access. Help and doctor make no credential/model request; doctor checks local readiness and helper presence. Missing dependencies/helper/key or failed startup stop visibly, with no silent rehearsal. Ctrl-C stops only this launcher's owned children. Mac ARM with Python 3.11.13 and `lsof` on PATH is qualified for the launcher; its listener ownership probe is not yet qualified on other platforms. Python strings cannot guarantee key zeroization.
+
+### Direct application entrypoints
+
+These remain available for reviewers who supply their own authorized environment without the Bitwarden wrapper. They preserve the original ports and require separate service ownership.
+
 Terminal1 starts the supplied synthetic API. Its raw audit includes patient route identifiers, so discard it rather than exporting it as Lab evidence:
 
 ```sh
@@ -55,6 +72,7 @@ Each CLI demo owns a fresh supplied mock and in-memory state. `reset` clears con
 - [User setup](docs/user/getting-started.md), [recovery](docs/user/recovery.md), [developer setup and exercise](docs/internal/development.md)
 - [Demo runbook](docs/internal/demo.md), [live qualification](docs/internal/live-qualification.md), [video notes](docs/internal/video-notes.md)
 - [Architecture](docs/internal/as-built/architecture.md), [code walkthrough](docs/internal/as-built/code-walkthrough.md), [decisions](docs/product/decisions.md)
+- [Persona/story/test evidence](docs/internal/persona-story-test-index.md)
 - [Stories](docs/product/user-stories.md), [personas](docs/product/personas.md), [backlog](docs/product/backlog.md), [roadmap](docs/product/roadmap.md), [work increments](docs/product/sprint-planning.md), [next steps](docs/product/next-steps.md)
 - [Asset rights](docs/internal/ui-assets.md), [third-party notices](THIRD-PARTY-NOTICES.md), [credential guard](docs/internal/security.md), [review](docs/internal/reviews/adversarial-review.md), [milestones](docs/internal/milestones.md)
 
