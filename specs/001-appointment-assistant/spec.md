@@ -235,3 +235,7 @@ Task L4 of the approved five-PoC model-first launcher plan extends Story 6 (Sam-
 - Acceptance: manifest hashes match the reviewed SM delivery; browser and CLI construct `OpenAIInterpreter` with the effective model; explicit offline selects `RehearsalInterpreter`; foreign listeners survive conflicts; credentials never enter mock environments/argv/logs; unchanged success/failure demos pass. Historical live qualification retains its original revision/date/limits and does not qualify new launch behavior.
 
 Approved external design/plan: DevOps `docs/superpowers/plans/2026-10-12-ochsner-model-first-launchers.md`, Task L4. Native tasks below own progress; shared Template runtime remains SM-owned. No product expansion, live paid call, capture, release/tag or protection bypass is included.
+
+## Current credential policy — 2026-10-20
+
+FR-019 / Story6 now selects our own exact Secure Note `[Env] OPENAI_API_KEY`, notes, until further notice. The 2026-10-12 Ochsner-item selection above is historical and superseded; all Ochsner-supplied-key retrieval/dispatch/diagnostics are paused. Explicit policy selection must work through both strict configuration and credential validators without inherited-key fallback. Keep model/default/override and secret-free child behavior. Offline fakes prove policy routing only; historical account-bound evidence is not own-key live qualification. No live dispatch is selected by this delta.

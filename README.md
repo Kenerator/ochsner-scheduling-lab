@@ -18,7 +18,7 @@ On Linux, a verified Python3.12 executable is also supported. Dependencies are p
 
 ## Run
 
-The normal Ochsner launcher defaults to the real OpenAI browser path and starts its own synthetic API. Configure `POC_SECRET_HELPER` to your trusted executable `bw-get-secret` helper (the existing `bw-get-secret.sh` is supported by absolute path). The helper must resolve the exact Secure Note **`[Env] (Ochsner PoC) OPENAI_API_KEY`**, **notes** field. The launcher never substitutes an inherited `OPENAI_API_KEY` or another item. Do not put a credential in this configuration or command.
+The normal Ochsner launcher defaults to the real OpenAI browser path and starts its own synthetic API. Configure `POC_SECRET_HELPER` to your trusted executable `bw-get-secret` helper (the existing `bw-get-secret.sh` is supported by absolute path). The helper must resolve the exact Secure Note **`[Env] OPENAI_API_KEY`**, **notes** field. This is the explicit own-key policy selection until further notice; Ochsner-supplied-key use is paused. The launcher never substitutes an inherited `OPENAI_API_KEY` or another item. Do not put a credential in this configuration or command. Live-model launches remain held pending separately verified own-account controls; these commands document the implementation, not new dispatch permission.
 
 ```sh
 .venv/bin/python tools/poc-runtime/launch.py --help
