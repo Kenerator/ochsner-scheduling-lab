@@ -69,3 +69,7 @@ Format correction: actual IAB bytes are native JPEG1280×720, verified by JPEG m
 ## Launcher update — 2026-10-12
 
 The normal launch path now uses the pinned shared model-first wrapper; browser28454/API4013 by default, explicit rehearsal/no-call diagnostics retained. Shared runtime manifest source `b7875452e3a999ca69ce170822c66e7f679b4442`; candidate consumer evidence is in native tasks. This launch-only integration performs no new recording, live model call or browser qualification. Existing stills/live qualification retain their historical source bindings; no new footage or performance claim is implied.
+
+## Credential policy update — 2026-10-20
+
+Ochsner-supplied-key use is paused; current launcher policy selects our own `[Env] OPENAI_API_KEY` notes field. Existing footage/stills and live qualification retain their historical source/account identity. This change includes no new capture, relaunch, paid call or own-key live qualification.

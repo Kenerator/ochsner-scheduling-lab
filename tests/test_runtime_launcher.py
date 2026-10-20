@@ -30,7 +30,7 @@ class RuntimeLauncherTests(unittest.TestCase):
         config = self.config()
         self.assertEqual('lab', config['adapter'])
         self.assertEqual('browser', config['default_interface'])
-        self.assertEqual('[Env] (Ochsner PoC) OPENAI_API_KEY', config['credential']['item'])
+        self.assertEqual('[Env] OPENAI_API_KEY', config['credential']['item'])
         self.assertEqual('gpt-5.4-mini', config['model']['default'])
         self.assertEqual('OPENAI_MODEL', config['model']['environment'])
 
@@ -40,7 +40,7 @@ class RuntimeLauncherTests(unittest.TestCase):
         path = RUNTIME / 'export-manifest.json'
         self.assertTrue(path.is_file(), 'Reviewed export manifest is missing')
         manifest = json.loads(path.read_text())
-        self.assertEqual('b7875452e3a999ca69ce170822c66e7f679b4442', manifest['source_revision'])
+        self.assertEqual('20e3dd56747797b35c082d109ac3bb0a7d7b1ebe', manifest['source_revision'])
         self.assertEqual('clean', manifest['source_worktree_state'])
         self.assertEqual(4, len(manifest['files']))
         for relative, digest in manifest['files'].items():
@@ -163,3 +163,22 @@ class RuntimeLauncherTests(unittest.TestCase):
         self.assertNotIn(CANARY, completed.stdout + completed.stderr)
         with socket.socket() as probe:
             self.assertNotEqual(0, probe.connect_ex(('127.0.0.1', port)))
+
+    def test_explicit_own_key_binding_never_uses_inherited_or_ochsner_item(self):
+        import subprocess
+        self.runtime()
+        credentials = importlib.import_module('credentials')
+        config = json.loads((ROOT / 'poc-launch.json').read_text())
+        calls = []
+        def fake_helper(argv, **kwargs):
+            calls.append((argv, kwargs['env']))
+            return subprocess.CompletedProcess(argv, 0, stdout=CANARY, stderr='')
+        with patch.dict(os.environ, {'OPENAI_API_KEY': CANARY + '-inherited',
+                                     'BW_SESSION': 'fake-session'}, clear=True), patch(
+                'credentials.helper_executable', return_value='/fake/trusted-helper'):
+            result = credentials.resolve_key(config['credential'], run=fake_helper)
+        self.assertEqual(CANARY, result)
+        self.assertEqual(1, len(calls))
+        self.assertEqual(['/fake/trusted-helper', '[Env] OPENAI_API_KEY', 'notes'], calls[0][0])
+        self.assertNotIn('OPENAI_API_KEY', calls[0][1])
+        self.assertNotIn('BW_SESSION', calls[0][1])

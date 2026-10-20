@@ -11,3 +11,7 @@ Updated: 2026-10-08.
 - Private Kenerator/ochsner-scheduling-lab delivery is approved; public submission remains Operator-owned. Budget compliance and Persona validation are not asserted.
 
 See [native plan](../../specs/001-appointment-assistant/plan.md) and [tasks](../../specs/001-appointment-assistant/tasks.md).
+
+## Credential policy — 2026-10-20
+
+Until further notice Ochsner-supplied-key use is paused. Normal Lab launch explicitly selects our own Secure Note `[Env] OPENAI_API_KEY`, notes field, through the existing trusted helper. This replaces the previous item selection; it is not fallback after failure and cannot use an inherited/stale key. Model defaults/overrides and all effect/accounting protections remain unchanged. No new paid qualification, relaunch or scheduling effect is authorized by this change. Historical evidence remains source/account-bound.
